@@ -29,20 +29,20 @@ export const loginUser = (userData) => {
 };
 
 // save book data for a logged in user
-export const saveBook = (bookData, token) => {
+export const saveBook = (movieData, token) => {
   return fetch('/api/users', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(bookData),
+    body: JSON.stringify(movieData),
   });
 };
 
 // remove saved book data for a logged in user
-export const deleteBook = (bookId, token) => {
-  return fetch(`/api/users/books/${bookId}`, {
+export const deleteBook = (movieId, token) => {
+  return fetch(`/api/users/movies/${movieId}`, {
     method: 'DELETE',
     headers: {
       authorization: `Bearer ${token}`,

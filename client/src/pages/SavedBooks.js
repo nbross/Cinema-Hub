@@ -74,21 +74,21 @@ const SavedBooks = () => {
       </Jumbotron>
       <Container>
         <h2>
-          {userData.savedBooks.length
-            ? `Viewing ${userData.savedBooks.length} saved ${userData.savedBooks.length === 1 ? 'book' : 'books'}:`
-            : 'You have no saved books!'}
+          {userData.savedMovies.length
+            ? `Viewing ${userData.savedMovies.length} saved ${userData.savedMovies.length === 1 ? 'movie' : 'movies'}:`
+            : 'You have no saved movies!'}
         </h2>
         <CardColumns>
-          {userData.savedBooks.map((book) => {
+          {userData.savedBooks.map((movie) => {
             return (
-              <Card key={book.bookId} border='dark'>
-                {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
+              <Card key={movie.bookId} border='dark'>
+                {movie.image ? <Card.Img src={movie.image} alt={`The cover for ${movie.title}`} variant='top' /> : null}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className='small'>Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
-                  <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
-                    Delete this Book!
+                  <Card.Title>{movie.title}</Card.Title>
+                  <p className='small'>Directors: {movie.directors}</p>
+                  <Card.Text>{movie.description}</Card.Text>
+                  <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(movie.movieId)}>
+                    Delete this Movie!
                   </Button>
                 </Card.Body>
               </Card>
@@ -100,4 +100,4 @@ const SavedBooks = () => {
   );
 };
 
-export default SavedBooks;
+export default savedMovies;
