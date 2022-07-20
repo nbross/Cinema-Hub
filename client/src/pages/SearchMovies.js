@@ -39,10 +39,10 @@ const SearchMovies = () => {
 
       const movieData = items.map((movie) => ({
         movieId: movie.id,
-        directors: movie.volumeInfo.authors || ['No director to display'],
-        title: movie.volumeInfo.title,
-        description: movie.volumeInfo.description,
-        image: movie.volumeInfo.imageLinks?.thumbnail || '',
+        //directors: movie.volumeInfo.directors || ['No director to display'],
+        title: movie.title,
+        description: movie.overview,
+        //image: movie.volumeInfo.imageLinks?.thumbnail || '',
       }));
 
       setSearchedMovies(movieData);
@@ -112,7 +112,7 @@ const SearchMovies = () => {
             : 'Search for a movie to begin'}
         </h2>
         <CardColumns>
-          {searchedBooks.map((movie) => {
+          {searchedMovies.map((movie) => {
             return (
               <Card key={movie.movieId} border='dark'>
                 {movie.image ? (
