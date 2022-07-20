@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
-import { getMe, deleteBook } from '../utils/API';
+import { getMe, deleteMovie } from '../utils/API';
 import Auth from '../utils/auth';
-import { removeBookId } from '../utils/localStorage';
+import { removeMovieId } from '../utils/localStorage';
 
-const SavedBooks = () => {
+const SavedMovies = () => {
   const [userData, setUserData] = useState({});
 
   // use this to determine if `useEffect()` hook needs to run again
@@ -36,8 +36,8 @@ const SavedBooks = () => {
     getUserData();
   }, [userDataLength]);
 
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
-  const handleDeleteBook = async (bookId) => {
+  // create function that accepts the movie's mongo _id value as param and deletes the movie from the database
+  const handleDeleteMovie = async (movieId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -45,7 +45,7 @@ const SavedBooks = () => {
     }
 
     try {
-      const response = await deleteBook(bookId, token);
+      const response = await deleteMovie(movieId, token);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -53,8 +53,8 @@ const SavedBooks = () => {
 
       const updatedUser = await response.json();
       setUserData(updatedUser);
-      // upon success, remove book's id from localStorage
-      removeBookId(bookId);
+      // upon success, remove movie's id from localStorage
+      removeMovieId(movieId);
     } catch (err) {
       console.error(err);
     }
@@ -69,7 +69,7 @@ const SavedBooks = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Viewing saved books!</h1>
+          <h1>Viewing saved movies!</h1>
         </Container>
       </Jumbotron>
       <Container>
@@ -79,15 +79,15 @@ const SavedBooks = () => {
             : 'You have no saved movies!'}
         </h2>
         <CardColumns>
-          {userData.savedBooks.map((movie) => {
+          {userData.savedMovies.map((movie) => {
             return (
-              <Card key={movie.bookId} border='dark'>
+              <Card key={movie.movieId} border='dark'>
                 {movie.image ? <Card.Img src={movie.image} alt={`The cover for ${movie.title}`} variant='top' /> : null}
                 <Card.Body>
                   <Card.Title>{movie.title}</Card.Title>
                   <p className='small'>Directors: {movie.directors}</p>
                   <Card.Text>{movie.description}</Card.Text>
-                  <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(movie.movieId)}>
+                  <Button className='btn-block btn-danger' onClick={() => handleDeleteMovie(movie.movieId)}>
                     Delete this Movie!
                   </Button>
                 </Card.Body>
@@ -100,4 +100,4 @@ const SavedBooks = () => {
   );
 };
 
-export default savedMovies;
+export default SavedMovies;

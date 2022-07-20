@@ -2,22 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
-import { saveBook, searchMovieAPI } from '../utils/API';
-import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+import { saveMovie, searchMovieAPI } from '../utils/API';
+import { saveMovieIds, getSavedMovieIds } from '../utils/localStorage';
 
 const SearchMovies = () => {
   // create state for holding returned google api data
-  const [searchedBooks, setSearchedBooks] = useState([]);
+  const [searchedMovies, setSearchedMovies] = useState([]);
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
   // create state to hold saved bookId values
-  const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
+  const [savedMovieIds, setSavedMovieIds] = useState(getSavedMovieIds());
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
-    return () => saveBookIds(savedBookIds);
+    return () => saveMovieIds(savedMovieIds);
   });
 
   // create method to search for books and set state on form submit
@@ -37,15 +37,15 @@ const SearchMovies = () => {
 
       const { items } = await response.json();
 
-      const bookData = items.map((book) => ({
-        bookId: book.id,
-        authors: book.volumeInfo.authors || ['No author to display'],
-        title: book.volumeInfo.title,
-        description: book.volumeInfo.description,
-        image: book.volumeInfo.imageLinks?.thumbnail || '',
+      const movieData = items.map((movie) => ({
+        movieId: movie.id,
+        directors: movie.volumeInfo.authors || ['No director to display'],
+        title: movie.volumeInfo.title,
+        description: movie.volumeInfo.description,
+        image: movie.volumeInfo.imageLinks?.thumbnail || '',
       }));
 
-      setSearchedBooks(bookData);
+      setSearchedMovies(movieData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
@@ -53,9 +53,9 @@ const SearchMovies = () => {
   };
 
   // create function to handle saving a book to our database
-  const handleSaveBook = async (bookId) => {
+  const handleSaveMovie = async (movieId) => {
     // find the book in `searchedBooks` state by the matching id
-    const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+    const movieToSave = searchedMovies.find((movie) => movie.movieId === movieId);
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -65,14 +65,14 @@ const SearchMovies = () => {
     }
 
     try {
-      const response = await saveBook(bookToSave, token);
+      const response = await saveMovie(movieToSave, token);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
 
       // if book successfully saves to user's account, save book id to state
-      setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+      setSavedMovieIds([...savedMovieIds, movieToSave.movieId]);
     } catch (err) {
       console.error(err);
     }
@@ -82,7 +82,7 @@ const SearchMovies = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Search for Books!</h1>
+          <h1>Search for Movies!</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -92,7 +92,7 @@ const SearchMovies = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
-                  placeholder='Search for a book'
+                  placeholder='Search for a movie'
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -107,29 +107,29 @@ const SearchMovies = () => {
 
       <Container>
         <h2>
-          {searchedBooks.length
-            ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a book to begin'}
+          {searchedMovies.length
+            ? `Viewing ${searchedMovies.length} results:`
+            : 'Search for a movie to begin'}
         </h2>
         <CardColumns>
-          {searchedBooks.map((book) => {
+          {searchedBooks.map((movie) => {
             return (
-              <Card key={book.bookId} border='dark'>
-                {book.image ? (
-                  <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
+              <Card key={movie.movieId} border='dark'>
+                {movie.image ? (
+                  <Card.Img src={movie.image} alt={`The poster for ${movie.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className='small'>Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  <Card.Title>{movie.title}</Card.Title>
+                  <p className='small'>Directors: {movie.directors}</p>
+                  <Card.Text>{movie.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
-                      disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
+                      disabled={savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)}
                       className='btn-block btn-info'
-                      onClick={() => handleSaveBook(book.bookId)}>
-                      {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
-                        ? 'This book has already been saved!'
-                        : 'Save this Book!'}
+                      onClick={() => handleSaveMovie(movie.movieId)}>
+                      {savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)
+                        ? 'This movie has already been saved!'
+                        : 'Save this Movie!'}
                     </Button>
                   )}
                 </Card.Body>
