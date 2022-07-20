@@ -30,7 +30,7 @@ const SearchMovies = () => {
     }
 
     try {
-      const response = await fetch(`https://www.googleapis.com/movies/v1/volumes?q=${searchInput}`);;
+      const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=fc82518d6f6323009ce050e9ec6d35c7&language=en-US&query=${searchInput}`);;
 
       if (!response.ok) {
         throw new Error('something went wrong!');
