@@ -6,21 +6,21 @@ import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 import { useMutation } from '@apollo/react-hooks';
 import { SAVE_BOOK } from '../utils/mutations';
 
-const SearchMovies = () => {
+const SearchBooks = () => {
   // create state for holding returned google api data
-  const [searchedMovies, setSearchedMovies] = useState([]);
+  const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
   // create state to hold saved bookId values
-  const [savedMovieIds, setSavedMovieIds] = useState(getSavedMovieIds());
+  const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
   const [saveBook, { error }] = useMutation(SAVE_BOOK);
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
-    return () => saveMovieIds(savedMovieIds);
+    return () => saveBookIds(savedBookIds);
   });
 
   // create method to search for books and set state on form submit
@@ -40,15 +40,15 @@ const SearchMovies = () => {
 
       const { items } = await response.json();
 
-      const movieData = items.map((movie) => ({
-        movieId: movie.id,
-        //directors: movie.volumeInfo.directors || ['No director to display'],
-        title: movie.title,
-        description: movie.overview,
-        //image: movie.volumeInfo.imageLinks?.thumbnail || '',
+      const bookData = items.map((book) => ({
+        bookId: book.id,
+        authors: book.volumeInfo.authors || ['No author to display'],
+        title: book.volumeInfo.title,
+        description: book.volumeInfo.description,
+        image: book.volumeInfo.imageLinks?.thumbnail || '',
       }));
 
-      setSearchedMovies(movieData);
+      setSearchedBooks(bookData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
@@ -56,9 +56,9 @@ const SearchMovies = () => {
   };
 
   // create function to handle saving a book to our database
-  const handleSaveMovie = async (movieId) => {
+  const handleSaveBook = async (bookId) => {
     // find the book in `searchedBooks` state by the matching id
-    const movieToSave = searchedMovies.find((movie) => movie.movieId === movieId);
+    const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -82,7 +82,7 @@ const SearchMovies = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Search for Movies!</h1>
+          <h1>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -92,7 +92,7 @@ const SearchMovies = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
-                  placeholder='Search for a movie'
+                  placeholder='Search for a book'
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -107,29 +107,29 @@ const SearchMovies = () => {
 
       <Container>
         <h2>
-          {searchedMovies.length
-            ? `Viewing ${searchedMovies.length} results:`
-            : 'Search for a movie to begin'}
+          {searchedBooks.length
+            ? `Viewing ${searchedBooks.length} results:`
+            : 'Search for a book to begin'}
         </h2>
         <CardColumns>
-          {searchedMovies.map((movie) => {
+          {searchedBooks.map((book) => {
             return (
-              <Card key={movie.movieId} border='dark'>
-                {movie.image ? (
-                  <Card.Img src={movie.image} alt={`The poster for ${movie.title}`} variant='top' />
+              <Card key={book.bookId} border='dark'>
+                {book.image ? (
+                  <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{movie.title}</Card.Title>
-                  <p className='small'>Directors: {movie.directors}</p>
-                  <Card.Text>{movie.description}</Card.Text>
+                  <Card.Title>{book.title}</Card.Title>
+                  <p className='small'>Authors: {book.authors}</p>
+                  <Card.Text>{book.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
-                      disabled={savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)}
+                      disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
                       className='btn-block btn-info'
-                      onClick={() => handleSaveMovie(movie.movieId)}>
-                      {savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)
-                        ? 'This movie has already been saved!'
-                        : 'Save this Movie!'}
+                      onClick={() => handleSaveBook(book.bookId)}>
+                      {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
+                        ? 'This book has already been saved!'
+                        : 'Save this Book!'}
                     </Button>
                   )}
                 </Card.Body>
@@ -142,4 +142,4 @@ const SearchMovies = () => {
   );
 };
 
-export default SearchMovies;
+export default SearchBooks;

@@ -5,7 +5,7 @@ import { useQuery, useMutation } from '@apollo/react-hooks';
 import { QUERY_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { removeMovieId } from '../utils/localStorage';
+import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -17,8 +17,8 @@ const SavedBooks = () => {
   const userDataLength = Object.keys(userData).length;
 
 
-  // create function that accepts the movie's mongo _id value as param and deletes the movie from the database
-  const handleDeleteMovie = async (movieId) => {
+  // create function that accepts the book's mongo _id value as param and deletes the book from the database
+  const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -82,4 +82,4 @@ const SavedBooks = () => {
   );
 };
 
-export default SavedMovies;
+export default SavedBooks;
