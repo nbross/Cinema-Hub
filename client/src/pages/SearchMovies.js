@@ -4,7 +4,7 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 import Auth from '../utils/auth';
 import { saveMovieIds, getSavedMovieIds } from '../utils/localStorage';
 import { useMutation } from '@apollo/react-hooks';
-import { SAVE_BOOK } from '../utils/mutations';
+import { SAVE_MOVIE } from '../utils/mutations';
 
 const SearchMovies = () => {
   // create state for holding returned google api data
@@ -12,10 +12,10 @@ const SearchMovies = () => {
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
-  // create state to hold saved bookId values
+  // create state to hold saved movieId values
   const [savedMovieIds, setSavedMovieIds] = useState(getSavedMovieIds());
 
-  const [saveMovie, { error }] = useMutation(SAVE_BOOK);
+  const [saveMovie, { error }] = useMutation(SAVE_MOVIE);
 
   // set up useEffect hook to save `savedMovieIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
@@ -55,7 +55,7 @@ const SearchMovies = () => {
     }
   };
 
-  // create function to handle saving a book to our database
+  // create function to handle saving a movie to our database
   const handleSaveMovie = async (movieId) => {
     // find the movie in `searchedMovies` state by the matching id
     const movieToSave = searchedMovies.find((movie) => movie.movieId === movieId);

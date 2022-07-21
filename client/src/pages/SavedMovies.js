@@ -3,13 +3,13 @@ import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap
 
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { QUERY_ME } from '../utils/queries';
-import { REMOVE_BOOK } from '../utils/mutations';
+import { REMOVE_MOVIE } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeMovieId } from '../utils/localStorage';
 
 const SavedMovies = () => {
   const { loading, data } = useQuery(QUERY_ME);
-  const [removeMovie, { error }] = useMutation(REMOVE_BOOK);
+  const [removeMovie, { error }] = useMutation(REMOVE_MOVIE);
 
   const userData = data?.me || {};
 
