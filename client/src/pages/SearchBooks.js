@@ -32,20 +32,20 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`);
+      const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=fc82518d6f6323009ce050e9ec6d35c7&language=en-US&query=${searchInput}`);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
 
-      const { items } = await response.json();
+      const { results } = await response.json();
 
-      const bookData = items.map((book) => ({
+      const bookData = results.map((book) => ({
         bookId: book.id,
-        authors: book.volumeInfo.authors || ['No author to display'],
-        title: book.volumeInfo.title,
-        description: book.volumeInfo.description,
-        image: book.volumeInfo.imageLinks?.thumbnail || '',
+        release:book.release_date,
+        title: book.title,
+        overview: book.overview,
+        image: book.poster_path || '',
       }));
 
       setSearchedBooks(bookData);
@@ -120,16 +120,16 @@ const SearchBooks = () => {
                 ) : null}
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
-                  <p className='small'>Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  <p className='small'>Release Year: {book.release}</p>
+                  <Card.Text>{book.overview}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
                       className='btn-block btn-info'
                       onClick={() => handleSaveBook(book.bookId)}>
                       {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
-                        ? 'This book has already been saved!'
-                        : 'Save this Book!'}
+                        ? 'This movie has already been saved!'
+                        : 'Save this Movie!'}
                     </Button>
                   )}
                 </Card.Body>
