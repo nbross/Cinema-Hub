@@ -1,34 +1,43 @@
-# Getting Started with Create React App
+# Book-Search-Engine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Google Books API search engine built in MERN Stack.
 
-## Available Scripts
+### Github : https://github.com/sylviaprabudy/book-search-engine
+### Website : https://book-search-99.herokuapp.com/
 
-In the project directory, you can run:
 
-### `npm start`
+## Description
+Google Books API search engine built in MERN Stack. Other than searching for books, users can sign up and login their account to save their favorive books.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## User Story
+```
+- AS AN avid reader
+- I WANT to search for new books to read
+- SO THAT I can keep a list of books to purchase
+```
 
-### `npm test`
+## Usage
+- Application allows users to search books with keywords.
+- Users are able to create an account when providing user name, email and password.
+- Logged in users will are able to save their favorite books as well as delete them.
+- Saved books are stored in their account, so next time they login, the books are still in their account to be viewed. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Screenshots
+![](client/src/assets/img/signup.png)
+![](client/src/assets/img/search_books.png)
+![](client/src/assets/img/saved_books.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Use
+<p><a href="https://www.mongodb.com/">MongoDB</a></p>
+<p><a href="https://www.npmjs.com/package/express">Express.js</a></p>
+<p><a href="https://reactjs.org/">React.js</a></p>
+<p><a href="https://nodejs.org/">Node.js</a></p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+<<<<<<< HEAD
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
@@ -70,3 +79,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
+=======
+## Contributor:
+Sylvia Prabudy ©2020 All Rights Reserved.
+- - -
+>>>>>>> 25e5a59312d857cdc19226801465ce0eddc777a9
