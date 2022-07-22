@@ -8,7 +8,7 @@ const movieSchema = new Schema({
   },
   // saved movie id from movie db
   movieId: {
-    type: String,
+    type: Number,
     required: true,
   },
   image: {

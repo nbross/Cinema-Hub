@@ -26,7 +26,7 @@ type Movie {
 
 input MovieInput {
     overview: String!
-    movieId: String!
+    movieId: Int!
     image: String
     release: String
     title: String!
