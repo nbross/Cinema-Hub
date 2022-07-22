@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema from movie.js
+// import schema from Book.js
 const movieSchema = require('./Movie');
 
 const userSchema = new Schema(
@@ -21,8 +21,8 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    // set savedmovies to be an array of data that adheres to the movieSchema
-    savedmovies: [movieSchema],
+    // set savedBooks to be an array of data that adheres to the bookSchema
+    savedMovies: [movieSchema],
   },
   // set this to use virtual below
   {
@@ -47,7 +47,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// when we query a user, we'll also get another field called `movieCount` with the number of saved movies we have
+// when we query a user, we'll also get another field called `movieCount` with the number of saved books we have
 userSchema.virtual('movieCount').get(function () {
   return this.savedMovies.length;
 });

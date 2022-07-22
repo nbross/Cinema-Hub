@@ -18,19 +18,17 @@ type User {
 
 type Movie {
     movieId: ID!
-    authors: [String]
-    description: String
+    overview: String
     image: String
-    link: String
+    release: String
     title: String!
   }
 
 input MovieInput {
-    authors: [String]
-    description: String!
-    movieId: String!
+    overview: String!
+    movieId: Int!
     image: String
-    link: String
+    release: String
     title: String!
   }
 
