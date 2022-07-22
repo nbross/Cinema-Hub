@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from 'react-bootstrap';
 
-const footer = () => {
+const appFooter = () => {
     return (
         <>
             <Container fluid className="text-light page-footer d-flex">
@@ -100,4 +100,4 @@ const footer = () => {
         </>
     )
 };
-export default footer;
+export default appFooter;
