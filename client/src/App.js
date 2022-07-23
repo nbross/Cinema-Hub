@@ -8,6 +8,8 @@ import ApolloClient from 'apollo-boost';
 import Footer from './components/Footer';
 
 
+
+
 const client = new ApolloClient({
   request: (operation) => {
     const token = localStorage.getItem('id_token');
