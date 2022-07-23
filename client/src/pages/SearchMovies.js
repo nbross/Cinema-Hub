@@ -5,6 +5,7 @@ import Auth from '../utils/auth';
 import { saveMovieIds, getSavedMovieIds } from '../utils/localStorage';
 import { useMutation } from '@apollo/react-hooks';
 import { SAVE_MOVIE } from '../utils/mutations';
+import "./style.css";
 
 const SearchMovies = () => {
   // create state for holding returned google api data
@@ -80,7 +81,7 @@ const SearchMovies = () => {
 
   return (
     <>
-      <Jumbotron fluid className='text-light bg-dark'>
+      <Jumbotron fluid className='text-light Jumbo'>
         <Container>
           <h1>Search for Movies!</h1>
           <Form onSubmit={handleFormSubmit}>
@@ -96,8 +97,8 @@ const SearchMovies = () => {
                 />
               </Col>
               <Col xs={12} md={4}>
-                <Button type='submit' variant='success' size='lg'>
-                  Submit Search
+                <Button className='Hub-Btn' type='submit' size='lg'>
+                  Search The Hub
                 </Button>
               </Col>
             </Form.Row>
@@ -105,7 +106,7 @@ const SearchMovies = () => {
         </Container>
       </Jumbotron>
 
-      <Container>
+      <Container className='Container'>
         <h2>
           {searchedMovies.length
             ? `Viewing ${searchedMovies.length} results:`
@@ -114,18 +115,19 @@ const SearchMovies = () => {
         <CardColumns>
           {searchedMovies.map((movie) => {
             return (
-              <Card key={movie.movieId} border='dark'>
+              <Card key={movie.movieId} border='dark' className='card'>
                 {movie.image ? (
                   <Card.Img src={`https://image.tmdb.org/t/p/w200${movie.image}`} alt={`The cover for ${movie.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
                   <Card.Title>{movie.title}</Card.Title>
-                  <p className='small'>Release Year: {movie.release}</p>
+                  <p className='small'>Release Date: {movie.release}</p>
                   <Card.Text>{movie.overview}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
+                      style={{backgroundColor:"#ffa31a", borderBlockColor:"black"}}
                       disabled={savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)}
-                      className='btn-block btn-info'
+                      className='btn-block'
                       onClick={() => handleSaveMovie(movie.movieId)}>
                       {savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)
                         ? 'This movie has already been saved!'
