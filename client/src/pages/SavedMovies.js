@@ -57,7 +57,7 @@ const SavedMovies = () => {
             : 'You have no saved movies!'}
         </h2>
         <CardColumns>
-          {userData.savedmovies?.map((movie) => {
+          {userData.savedMovies?.map((movie) => {
             return (
               <Card key={movie.movieId} border='dark'>
                 {movie.image ? (
@@ -70,7 +70,7 @@ const SavedMovies = () => {
                   <Button
                     className='btn-block btn-danger'
                     onClick={() => handleDeleteMovie(movie.movieId)}>
-                    Delete this movie!
+                    Delete this Movie!
                   </Button>
                 </Card.Body>
               </Card>

@@ -17,7 +17,7 @@ const SearchMovies = () => {
 
   const [saveMovie, { error }] = useMutation(SAVE_MOVIE);
 
-  // set up useEffect hook to save `savedmovieIds` list to localStorage on component unmount
+  // set up useEffect hook to save `savedMovieIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
     return () => saveMovieIds(savedMovieIds);
@@ -32,20 +32,20 @@ const SearchMovies = () => {
     }
 
     try {
-      const response = await fetch(`https://www.googleapis.com/movies/v1/volumes?q=${searchInput}`);
+      const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=fc82518d6f6323009ce050e9ec6d35c7&language=en-US&query=${searchInput}`);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
 
-      const { items } = await response.json();
+      const { results } = await response.json();
 
-      const movieData = items.map((movie) => ({
+      const movieData = results.map((movie) => ({
         movieId: movie.id,
-        authors: movie.volumeInfo.authors || ['No author to display'],
-        title: movie.volumeInfo.title,
-        description: movie.volumeInfo.description,
-        image: movie.volumeInfo.imageLinks?.thumbnail || '',
+        release:movie.release_date,
+        title: movie.title,
+        overview: movie.overview,
+        image: movie.poster_path || '',
       }));
 
       setSearchedMovies(movieData);
@@ -57,7 +57,7 @@ const SearchMovies = () => {
 
   // create function to handle saving a movie to our database
   const handleSaveMovie = async (movieId) => {
-    // find the movie in `searchedmovies` state by the matching id
+    // find the movie in `searchedMovies` state by the matching id
     const movieToSave = searchedMovies.find((movie) => movie.movieId === movieId);
 
     // get token
@@ -82,7 +82,7 @@ const SearchMovies = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Search for movies!</h1>
+          <h1>Search for Movies!</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -116,12 +116,12 @@ const SearchMovies = () => {
             return (
               <Card key={movie.movieId} border='dark'>
                 {movie.image ? (
-                  <Card.Img src={movie.image} alt={`The cover for ${movie.title}`} variant='top' />
+                  <Card.Img src={`https://image.tmdb.org/t/p/w200${movie.image}`} alt={`The cover for ${movie.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
                   <Card.Title>{movie.title}</Card.Title>
-                  <p className='small'>Authors: {movie.authors}</p>
-                  <Card.Text>{movie.description}</Card.Text>
+                  <p className='small'>Release Year: {movie.release}</p>
+                  <Card.Text>{movie.overview}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)}
@@ -129,7 +129,7 @@ const SearchMovies = () => {
                       onClick={() => handleSaveMovie(movie.movieId)}>
                       {savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)
                         ? 'This movie has already been saved!'
-                        : 'Save this movie!'}
+                        : 'Save this Movie!'}
                     </Button>
                   )}
                 </Card.Body>

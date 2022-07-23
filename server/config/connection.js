@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlemovies', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/cinema-hub', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

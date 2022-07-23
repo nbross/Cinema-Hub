@@ -9,60 +9,60 @@ const appFooter = () => {
                 <Container>
                     <h5 className='pt-4'>Contact Us</h5>
                     <div className="d-lg-flex pb-4 justify-content-between">
-                        <ul className="no-bullets">
-                            <li><h6>Nick Bross</h6></li>
+                    <ul className="no-bullets">
+                            <li><h6>Mohamed Behnas</h6></li>
                             <li>
-                                /* <a className="footer-link" href="https://github.com/nbross/#/about">
+                            <a className="footer-link" href="https://mobehnas.github.io/react-portfolio/#/about">
                                     <span><i className="far fa-folder pr-3"></i></span>
-                                    https://nickbross.github.io/react-portfolio
+                                    mobehnas.github.io/react-portfolio
                                 </a>
                             </li>
                             <li>
-                                <a className="footer-link" href="mailto:nickbross@gmail.com">
+                                <a className="footer-link" href="mailto:behnas.mohamed@outlook.com">
                                     <span><i className="far fa-envelope pr-3"></i></span>
-                                    nickbross@gmail.com
+                                    behnas.mohamed@outlook.com
                                 </a>
                             </li>
                             <li>
-                                <a className="footer-link" href="https://github.com/nickbross">
+                                <a className="footer-link" href="https://github.com/mobehnas">
                                     <span><i className="fab fa-github pr-3"></i></span>
-                                    nickbross
+                                    mobehnas
                                 </a>
                             </li>
                             <li>
-                                <a className="footer-link" href="https://www.linkedin.com/in/nickbross/">
+                                <a className="footer-link" href="https://www.linkedin.com/in/mohamed-behnas/">
                                     <span><i className="fab fa-linkedin pr-3"></i></span>
-                                    Nick-bross-(216)4666755
+                                    mohamed-behnas-1998
                                 </a>
                             </li>
                         </ul>
                         <ul className="no-bullets">
-                            <li><h6>Jacob Owen</h6></li> */
-                            /* <li>
-                                <a className="footer-link" href="https://Jmowen1999.github.io/react-portfolio/#/about">
+                            <li><h6>Mohamed Behnas</h6></li>
+                            <li>
+                            <a className="footer-link" href="https://mobehnas.github.io/react-portfolio/#/about">
                                     <span><i className="far fa-folder pr-3"></i></span>
-                                    https://Jmowen1999.github.io/react-portfolio/
+                                    mobehnas.github.io/react-portfolio
                                 </a>
                             </li>
                             <li>
-                                <a className="footer-link" href="mailto:jacobowen@gmail.com">
+                                <a className="footer-link" href="mailto:behnas.mohamed@outlook.com">
                                     <span><i className="far fa-envelope pr-3"></i></span>
-                                    jacobowen@gmail.com
+                                    behnas.mohamed@outlook.com
                                 </a>
                             </li>
                             <li>
-                                <a className="footer-link" href="https://github.com/Jmowen1999">
+                                <a className="footer-link" href="https://github.com/mobehnas">
                                     <span><i className="fab fa-github pr-3"></i></span>
-                                    Jmowen1999
+                                    mobehnas
                                 </a>
                             </li>
                             <li>
-                                <a className="footer-link" href="https://www.linkedin.com/in/jmowen1999/">
+                                <a className="footer-link" href="https://www.linkedin.com/in/mohamed-behnas/">
                                     <span><i className="fab fa-linkedin pr-3"></i></span>
-                                    jacob-owen-1999
+                                    mohamed-behnas-1998
                                 </a>
                             </li>
-                        </ul> 
+                        </ul>
                         <ul className="no-bullets">
                             <li><h6>Mohamed Behnas</h6></li>
                             <li>

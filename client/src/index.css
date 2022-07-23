@@ -1,71 +1,17 @@
-.app-container {
-    margin-bottom: 8em;
-    position: relative;
-    min-height: 100vh;
-  }
-  body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-   
-    background: #26282b;
-    color: #cfcfcf;
-  }
-  .navbar {
-    color: #cfcfcf;
-  }
-  .homepage {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    /* background-image: url(&#39;./assets/images/movies.jpg&#39;); */
-    background-size: cover;
-    background-position: center;
-    justify-content: center;
-  }
-  .home-text {
-    text-align: center;
-  }
-  .card {
-    border: none;
-  }
-  .card-body {
-    color: #3f3f3f;
-  }
-  .card-columns {
-    flex-direction: row;
-  }
-  .card-img-top {
-    max-height: 75vh;
-  }
-  .small {
-    font-weight: 300;
-    font-style: italic;
-  }
-  .no-bullets {
-    list-style: none;
-  }
-  .page-footer {
-    background-color: #353941;
-  }
-  .footer-link {
-    color: #cfcfcf;
-    font-size: 0.8rem;
-  }
-  .footer-link:hover {
-    color: #9c9ea1;
-  }
-  @media (min-width: 576px) {
-    .card-columns {
-      column-count: 1;
-   }
-  }
-  @media (min-width: 768px) {
-    .card-columns {
-      column-count: 2;
-   }
-  }
-  @media (min-width: 992px) {
-    .card-columns {
-      column-count: 3;
-   }
-  }
-  
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.small {
+  font-weight: 300;
+  font-style: italic;
+}
