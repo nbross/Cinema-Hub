@@ -15,7 +15,7 @@ const AppNavbar = () => {
       <Navbar className='nav' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/' className='The-Hub'>
-            Cinema Hub
+            Cinema Hub 
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbarSupportedContentr' />
           <Navbar.Collapse id='navbar'>

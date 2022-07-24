@@ -54,7 +54,7 @@ const SavedMovies = () => {
             ? `Viewing ${userData.savedMovies.length} saved ${
                 userData.savedMovies.length === 1 ? 'movie' : 'movies'
               }:`
-            : 'You have no saved movies!'}
+            : 'You have no saved movies! 😔 '}
         </h2>
         <CardColumns>
           {userData.savedMovies?.map((movie) => {

@@ -93,7 +93,7 @@ const SearchMovies = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
-                  placeholder='Search for a movie'
+                  placeholder='Search for a movie 📽'
                 />
               </Col>
               <Col xs={12} md={4}>

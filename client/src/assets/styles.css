@@ -12,6 +12,7 @@
 .Hub-Btn:hover{
     background-color: #47d4b1;
 }
+
 .navbar {
     /* background:orange; */
     position: relative;
@@ -35,6 +36,7 @@
     -webkit-text-fill-color: transparent;
     animation: textclip 2s linear infinite;
     font-size: 20px;
+    
 
   }
   
@@ -44,14 +46,15 @@
     }
 }
 .Jumbo{
-    background-color: #050e18;
+    background-color: #1a3a5c;
 }
-.text-light {
+.bg-dark {
     background-color: #142a41;
 }
 
  
 h1{
+    
     font-size: 1.5rem;
     /* text-transform: uppercase; */
     background-image: linear-gradient(
@@ -71,6 +74,7 @@ h1{
     animation: textclip 2s linear infinite;
     display: inline-block;
     font-size: 20px;
+    
   }
   
   @keyframes textclip {
