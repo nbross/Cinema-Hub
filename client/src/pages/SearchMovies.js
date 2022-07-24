@@ -104,18 +104,15 @@ const SearchMovies = () => {
             </Form.Row>
           </Form>
         </Container>
+        
       </Jumbotron>
 
       <Container className='Container'>
-        <h2>
-          {searchedMovies.length
-            ? `Viewing ${searchedMovies.length} results:`
-            : 'Search for a movie to begin'}
-        </h2>
+  
         <CardColumns>
           {searchedMovies.map((movie) => {
             return (
-              <Card key={movie.movieId} border='dark' className='card'>
+              <Card key={movie.movieId} className='card'>
                 {movie.image ? (
                   <Card.Img src={`https://image.tmdb.org/t/p/w200${movie.image}`} alt={`The cover for ${movie.title}`} variant='top' />
                 ) : null}

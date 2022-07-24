@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 const appFooter = () => {
     return (
         <>
+
             <Container fluid className="text-light page-footer d-flex">
                 <Container>
                     <h5 className='pt-4'>Contact Us</h5>
@@ -92,7 +93,7 @@ const appFooter = () => {
                         </ul>
                     </div>
                     <div className="d-flex justify-content-between">
-                        <p>© 2022</p>
+                        <p>© 2022 All Rights Reserved</p>
                         <p><a className="footer-link" href="https://github.com/nbross/Cinema-Hub"><i className="fab fa-github pr-3"></i>Visit the GitHub Repo</a></p>
                     </div>
                 </Container>
