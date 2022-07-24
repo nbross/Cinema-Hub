@@ -97,7 +97,7 @@ const SearchMovies = () => {
               </Col>
               <Col xs={12} md={4}>
                 <Button type='submit' variant='success' size='lg'>
-                  Submit Search
+                   Search
                 </Button>
               </Col>
             </Form.Row>
@@ -106,11 +106,6 @@ const SearchMovies = () => {
       </Jumbotron>
 
       <Container>
-        <h2>
-          {searchedMovies.length
-            ? `Viewing ${searchedMovies.length} results:`
-            : 'Search for a movie to begin'}
-        </h2>
         <CardColumns>
           {searchedMovies.map((movie) => {
             return (

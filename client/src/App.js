@@ -5,6 +5,9 @@ import SavedMovies from './pages/SavedMovies';
 import Navbar from './components/Navbar';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
+import Footer from './components/Footer';
+
+
 
 
 const client = new ApolloClient({
@@ -33,6 +36,7 @@ function App() {
         </Switch>
       </>
     </Router>
+    < Footer />
     </ApolloProvider>
   );
 }
