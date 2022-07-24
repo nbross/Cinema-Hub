@@ -17,9 +17,9 @@ const AppNavbar = () => {
           <Navbar.Brand as={Link} to='/' className='The-Hub'>
             Cinema Hub
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
+          <Navbar.Toggle aria-controls='navbarSupportedContentr' />
           <Navbar.Collapse id='navbar'>
-            <Nav className='ml-auto'>
+            <Nav className='ml-auto dark'>
               <Nav.Link as={Link} to='/'>
                 Search For Movies
               </Nav.Link>

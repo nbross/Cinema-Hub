@@ -98,7 +98,7 @@ const SearchMovies = () => {
               </Col>
               <Col xs={12} md={4}>
                 <Button className='Hub-Btn' type='submit' size='lg'>
-                  Search The Hub
+                  Search Now
                 </Button>
               </Col>
             </Form.Row>
@@ -122,7 +122,7 @@ const SearchMovies = () => {
                   <Card.Text>{movie.overview}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
-                      style={{backgroundColor:"#ffa31a", borderBlockColor:"black"}}
+                      style={{backgroundColor:"#1f4670", borderBlockColor:"black"}}
                       disabled={savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)}
                       className='btn-block'
                       onClick={() => handleSaveMovie(movie.movieId)}>
