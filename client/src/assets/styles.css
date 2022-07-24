@@ -1,20 +1,13 @@
 
+/* .a {
 
-.Hub-Btn{
-  background-color:  #22b38e; 
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  
-}
-.Hub-Btn:hover{
-    background-color: #47d4b1;
-}
+    font-size: 60px;
+    font-family: 'Erica One';
+} */
 
 .navbar {
     /* background:orange; */
+    background-color: orange;
     position: relative;
     flex-wrap: wrap;
     align-items: center;
@@ -22,7 +15,7 @@
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
     background-image: linear-gradient(
-      -225deg,
+      -2deg,
       #231557 0%,
       #44107a 29%,
       #ff1361 67%,
@@ -36,29 +29,59 @@
     -webkit-text-fill-color: transparent;
     animation: textclip 2s linear infinite;
     font-size: 20px;
-    
-
   }
+   .navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-image: linear-gradient(
+      225deg,
+      #796ab1 0%,
+      #ff1361 67%,
+      #fff800 100%
+    );
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.Hub-Btn{
+  background-color:  #44107a ; 
+  border: none;
+  /* color: white; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   
-  @keyframes textclip {
+}
+.Hub-Btn:hover{
+    background-color: #47d4b1;
+}
+   */
+  /* @keyframes textclip {
     to {
       background-position: 200% center;
-    }
-}
+    } */
+
 .Jumbo{
-    background-color: #1a3a5c;
-}
+   
+  background-image: url("./img/movie-theater.jpg");
+    /* width: 300px;   */
+    height: 280px;  
+     /* text-align: center;   */
+    padding: 60px; 
+}  
 .bg-dark {
-    background-color: #142a41;
+  background-color: white;
+  background-image: "../assets/img/cinema-film-.jpg";
+
 }
 
- 
 h1{
-    
+    font-family: 'Erica One';
     font-size: 1.5rem;
     /* text-transform: uppercase; */
     background-image: linear-gradient(
-      -225deg,
+      -220deg,
       #231557 0%,
       #44107a 29%,
       #ff1361 67%,
@@ -74,15 +97,14 @@ h1{
     animation: textclip 2s linear infinite;
     display: inline-block;
     font-size: 20px;
-    
   }
   
   @keyframes textclip {
     to {
-      background-position: 200% center;
+      background-position: 100% center;
     }
   }
-/* https://img.freepik.com/premium-photo/clapperboard-popcorns-cinema-tickets-yellow-background_23-2148188197.jpg?w=1380 */
+
 
 
 div.card-body{
@@ -90,19 +112,15 @@ div.card-body{
     /* color: black; */
 }
 a.The-Hub.navbar-brand{
-    color: white;
+    /* color: white; */
     font-size: 40px;
+    font-family: 'Erica One';
     
 }
 .card{
     background-color: white;
     color: black;
 }
-.navbar-dark .navbar-toggler-icon {
-   /* color: black; */
-    /* background-image: url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"); */
-}
-
 
 @media (min-width: 576px) {
     .card-columns {

@@ -7,6 +7,8 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 // import Footer from './components/Footer';
 
+   
+
 
 
 
@@ -35,11 +37,12 @@ function App() {
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
         </Switch>
       </>
-      {/* < Footer /> */}
+     
     </Router>
     
-    
+    {/* < Footer /> */}
     </ApolloProvider>
+     
   );
 }
 
