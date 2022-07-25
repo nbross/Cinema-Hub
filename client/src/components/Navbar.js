@@ -12,24 +12,24 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar className='nav' variant='dark' expand='lg'>
+      <Navbar className='nav' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/' className='The-Hub'>
-            Cinema <span className='Hub'>Hub</span> 
+            <span className='The-Cinema'>Cinema</span> <span className='Hub'>Hub</span> 
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
-            <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/'>
+            <Nav className='ml-auto nav-items'>
+              <Nav.Link as={Link} to='/' className='nav-search'>
                 Search For Movies
               </Nav.Link>
               {/* if user is logged in show saved Movies and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to='/saved'>
-                    See Your Movies
+                  <Nav.Link as={Link} to='/saved' className='nav-watchlist'>
+                    Your Watchlist
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={Auth.logout} className='nav-logout'>Logout</Nav.Link>
                 </>
               ) : (
                 <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>

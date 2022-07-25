@@ -125,13 +125,12 @@ const SearchMovies = () => {
                   <Card.Text>{movie.overview}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
-                      style={{backgroundColor:"#ffa31a", borderBlockColor:"black"}}
                       disabled={savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)}
-                      className='btn-block'
+                      className='btn-block Save'
                       onClick={() => handleSaveMovie(movie.movieId)}>
                       {savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)
-                        ? 'This movie has already been saved!'
-                        : 'Save this Movie!'}
+                        ? 'This Movie is Already in Your Watchlist!'
+                        : 'Add Movie To Watchlist!'}
                     </Button>
                   )}
                 </Card.Body>
