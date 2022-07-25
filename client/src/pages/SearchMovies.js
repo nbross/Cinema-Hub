@@ -13,14 +13,14 @@ const SearchMovies = () => {
   const [searchInput, setSearchInput] = useState('');
 
   // create state to hold saved movieId values
-  const [savedMovieIds, setSavedMovieIds] = useState(setSavedMovieIds());
+  const [savedMovieIds, setSavedMovieIds] = useState(getSavedMovieIds());
 
   const [saveMovie, { error }] = useMutation(SAVE_MOVIE);
 
   // set up useEffect hook to save `savedmovieIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
-    return () => savedMovieIds(savedMovieIds);
+    return () => saveMovieIds(savedMovieIds);
   });
 
   // create method to search for movies and set state on form submit
