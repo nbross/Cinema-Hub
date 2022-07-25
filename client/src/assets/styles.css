@@ -4,6 +4,10 @@
     font-size: 60px;
     font-family: 'Erica One';
 } */
+*{
+  margin: 0;
+  padding: 0;
+}
 
 .navbar {
     /* background:orange; */
@@ -45,7 +49,7 @@
 }
 
 .Hub-Btn{
-  background-color:  #44107a ; 
+  background-color:  #e24f15 ; 
   border: none;
   /* color: white; */
   text-align: center;
@@ -54,27 +58,29 @@
   
 }
 .Hub-Btn:hover{
-    background-color: #47d4b1;
+    background-color: #c2225f;
 }
-   */
-  /* @keyframes textclip {
+   
+   @keyframes textclip {
     to {
       background-position: 200% center;
-    } */
-
+    } 
+  }
 .Jumbo{
-   
-  background-image: url("./img/movie-theater.jpg");
-    /* width: 300px;   */
-    height: 280px;  
-     /* text-align: center;   */
-    padding: 60px; 
+  background-image: url("https://as1.ftcdn.net/jpg/02/79/76/39/1000_F_279763928_YBQyBKQ70xgxGjC6y48eioEdFwKJ5xfT.jpg");
+    text-align: left;  
+    padding: 50px; 
 }  
 .bg-dark {
-  background-color: white;
-  background-image: "../assets/img/cinema-film-.jpg";
+  background-image: url("https://as1.ftcdn.net/jpg/02/79/76/39/1000_F_279763928_YBQyBKQ70xgxGjC6y48eioEdFwKJ5xfT.jpg");
 
+  background-size:cover;
+  background-repeat: no-repeat;
+  text-align: left;
+   padding: 50px; 
+  
 }
+
 
 h1{
     font-family: 'Erica One';
