@@ -1,5 +1,5 @@
 # Cinema-Hub
-Are you tired of having to go through your webmaster every time you want to update or change your restaurant’s webpage? With our tool, you can log in to your Made-to-make webpage and create the perfect menu to showcase your chef’s dishes!
+Are you tired of not remembering a title to you favorite movie, or do you want a short and sweet description of a movie you have been wanting to see. Then boy do I have the website for you. It is called Cinema Hub a website where you can search thousands of movies to their read descriptions and save them to a watch list to watch them later on.
 ## User Story
 
 ```
