@@ -11,7 +11,7 @@ type Mutation {
 type User {
     _id: ID!
     username: String!
-    email: String
+    email: String!
     movieCount: Int
     savedMovies: [Movie]
   }
@@ -21,15 +21,15 @@ type Movie {
     overview: String
     image: String
     release: String
-    title: String!
+    title: String
   }
 
 input MovieInput {
-    overview: String!
-    movieId: Int!
+    overview: String
+    movieId: Int
     image: String
     release: String
-    title: String!
+    title: String
   }
 
 type Query {
@@ -40,8 +40,6 @@ type Query {
     token: ID!
     user: User
   }
-
-
 `;
 
 module.exports = typeDefs;
