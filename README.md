@@ -83,4 +83,15 @@ THEN I am signed out of the site
 
 Git Hub Repo: https://github.com/nbross/Cinema-hub
 
+## Future Development Plans :
+<b>Future enhancements to this app include:</b>
+
+
 Deployed Site: 
+
+
+## Contribution:
+<b>this project is made by :</b>
+- Nick Bross
+- Jacob Owen
+- Mohamed Behnas 
