@@ -4,16 +4,13 @@ import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { QUERY_ME } from '../utils/queries';
 import { REMOVE_MOVIE } from '../utils/mutations';
-import { WATCHED_MOVIE } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeMovieId } from '../utils/localStorage';
-import { watchedMovieId } from '../utils/localStorage';
 
 const SavedMovies = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [removeMovie, { error }] = useMutation(REMOVE_MOVIE);
-  const [ watchedMovie]= useMutation(WATCHED_MOVIE);
-
+  
   const userData = data?.me || {};
 
   // use this to determine if `useEffect()` hook needs to run again
@@ -35,28 +32,6 @@ const SavedMovies = () => {
 
       // upon success, remove movie's id from localStorage
       removeMovieId(movieId);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  if (loading) {
-    return <h2>LOADING...</h2>;
-  }
-
-  const handleWatchedMovie = async (movieId) => {
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    if (!token) {
-      return false;
-    }
-
-    try {
-      const { data } = await watchedMovie({
-        variables: { movieId },
-      });
-
-      watchedMovieId(movieId);
     } catch (err) {
       console.error(err);
     }
@@ -96,11 +71,6 @@ const SavedMovies = () => {
                     className='btn-block btn-danger'
                     onClick={() => handleDeleteMovie(movie.movieId)}>
                     Delete this Movie!
-                  </Button>
-                  <Button
-                    className='btn-block btn'
-                    onClick={() => handleWatchedMovie(movie.movieId)}>
-                    You watched this movie!
                   </Button>
                 </Card.Body>
               </Card>
