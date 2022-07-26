@@ -58,6 +58,10 @@ const SavedMovies = () => {
     } catch (err) {
       console.error(err);
     }
+  };
+
+  if (loading) {
+    return <h2>LOADING...</h2>;
   }
 
   return (
@@ -94,7 +98,7 @@ const SavedMovies = () => {
                   <Button
                     className='btn-block btn'
                     onClick={() => handleWatchedMovie(movie.movieId)}>
-                    You watched this movie!
+                    Watched!
                   </Button>
                 </Card.Body>
               </Card>

@@ -42,4 +42,4 @@ export const watchedMovieId = (movieId) => {
   localStorage.setItem('saved_movies', JSON.stringify(updatedSavedMovieIds));
 
   return true;
-}
+};
