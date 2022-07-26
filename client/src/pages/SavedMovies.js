@@ -7,10 +7,12 @@ import { REMOVE_MOVIE } from '../utils/mutations';
 import { WATCHED_MOVIE } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeMovieId } from '../utils/localStorage';
+import { watchedMovieId } from '../utils/localStorage';
 
 const SavedMovies = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [removeMovie, { error }] = useMutation(REMOVE_MOVIE);
+  const [ watchedMovie]= useMutation(WATCHED_MOVIE);
 
   const userData = data?.me || {};
 
@@ -50,11 +52,11 @@ const SavedMovies = () => {
     }
 
     try {
-      const { data } = await WATCHED_MOVIE({
+      const { data } = await watchedMovie({
         variables: { movieId },
       });
 
-      WATCHED_MOVIE(movieId);
+      watchedMovieId(movieId);
     } catch (err) {
       console.error(err);
     }
@@ -98,7 +100,7 @@ const SavedMovies = () => {
                   <Button
                     className='btn-block btn'
                     onClick={() => handleWatchedMovie(movie.movieId)}>
-                    Watched!
+                    You watched this movie!
                   </Button>
                 </Card.Body>
               </Card>
