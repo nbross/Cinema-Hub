@@ -52,7 +52,7 @@ const SavedMovies = () => {
     }
 
     try {
-      const { data } = await watchedMovi({
+      const { data } = await watchedMovie({
         variables: { movieId },
       });
 
