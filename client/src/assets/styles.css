@@ -19,11 +19,11 @@
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
     background-image: linear-gradient(
-      -2deg,
+      -220deg,
       #231557 0%,
       #44107a 29%,
       #ff1361 67%,
-      #fff800 100%
+      #ff7300 100%
     );
     background-size: auto auto;
     background-clip: border-box;

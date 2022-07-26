@@ -73,6 +73,33 @@ THEN I am signed out of the site
 * MongoDB
 * bcrypt
 * React
+* 
+
+## Packages :
+In this project we used the following packages:
+```text
+* Node.js
+* apollo/react-hooks
+*    stripe/stripe-js
+*    testing-library/jest-dom
+*    testing-library/react
+*    testing-library/user-event
+ *   apollo-boost
+  *  apollo-link-context
+   * graphql
+    * graphql-tag
+   * jwt-decode
+    * apollo-server-express
+   *  bcrypt
+   * express
+     * jsonwebtoken
+   * mongoose
+    *  react
+   * react-dom
+    react-router-dom
+   * react-scripts
+```
+
 
 
 ## Screenshot
