@@ -82,12 +82,13 @@ THEN I am signed out of the site
 ## Repo link
 
 Git Hub Repo: https://github.com/nbross/Cinema-hub
+Deployed Site: 
 
 ## Future Development Plans :
 <b>Future enhancements to this app include:</b>
 
 
-Deployed Site: 
+
 
 
 ## Contribution:
