@@ -101,9 +101,9 @@ THEN I am signed out of the site
  - Mohamed Behnas 
   
 <b>View the authors' portfolio at:  </b>
-- [Nick Bross ](https:/nickbros.github.io/react-portfolio/)/
+- [Nick Bross ](https:/nickbros.github.io/react-portfolio/)
   ![Badge](https://img.shields.io/badge/Github-Nick-Bross)
-- [Owen Jacob ](https:/jacobowen.github.io/react-portfolio/)/
+- [Owen Jacob ](https:/jacobowen.github.io/react-portfolio/)
   ![Badge](https://img.shields.io/badge/Github-Owen-Jacob)
-- [Mohamed Behnas ](https://tranquil-eyrie-31006.herokuapp.com/#/)/
+- [Mohamed Behnas ](https://tranquil-eyrie-31006.herokuapp.com/#/)
   ![Badge](https://img.shields.io/badge/Github-Mohamed-Behnas)
