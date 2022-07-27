@@ -40,11 +40,9 @@ Have a high-quality README (with unique name, description, technologies used, sc
 ```
 GIVEN a MERN SPA style Website
 WHEN I visit the site for the first time
-THEN I am presented with the homepage, which includes navigation links for the homepage and the dashboard; and the option to log in
-WHEN I click on the homepage option
-THEN I am taken to the homepage
-WHEN I click on any other links in the navigation
-THEN I am prompted to either sign up or sign in
+THEN I am presented with the homepage, which includes navigation links for the search and the watchlist; and the option to log in
+WHEN I click on the search option
+THEN I am taken to the search page
 WHEN I choose to sign up
 THEN I am prompted to create a username and password
 WHEN I click on the sign-up button
@@ -52,17 +50,13 @@ THEN my user credentials are saved and I am logged into the site
 WHEN I revisit the site at a later time and choose to sign in
 THEN I am prompted to enter my email and password
 WHEN I am signed in to the site
-THEN I see navigation links for the homepage, the dashboard, and the option to log out
-WHEN I click on the homepage option in the navigation
-THEN I am taken to the homepage and presented with an existing menu post that includes the menu's title and a picture
-WHEN I click on an existing menu
-THEN I am presented with the recipes and pictures of the food items
-WHEN I click on the dashboard option in the navigation
-THEN I am taken to the dashboard and presented with the option to add a new recipe post
-WHEN I click on the button to add a new recipe post
-THEN I am prompted to enter both a title and contents for my recipe post
-WHEN I click on the button to create a new recipe post
-THEN the title and contents of my recipe are saved and I am taken back to the dashboard
+THEN I see navigation links for the search, the watchlist, and the option to log out
+WHEN I click on an existing movie
+THEN I am presented with the option to add to my watchlist
+WHEN I click on the watchlist option in the navigation
+THEN I am taken to my watchlist and presented with the movies I just added and an option to remove them
+WHEN I click on the button to remove the movie from my watchlist
+THEN I see that movie is removed
 WHEN I click on the logout option in the navigation
 THEN I am signed out of the site
 ```
@@ -73,7 +67,10 @@ THEN I am signed out of the site
 * MongoDB
 * bcrypt
 * React
-
+* Apollo
+* GraphQL
+* JWT
+* The Movie DB
 
 ## Application Screenshot :
 
@@ -101,7 +98,7 @@ THEN I am signed out of the site
  - Mohamed Behnas 
   
 <b>View the authors' portfolio at:  </b>
-- [Nick Bross ](https:/nickbros.github.io/react-portfolio/)
+- [Nick Bross ](https://nbross.github.io/react-port/)
   ![Badge](https://img.shields.io/badge/Github-Nick-Bross)
 - [Owen Jacob ](https:/jacobowen.github.io/react-portfolio/)
   ![Badge](https://img.shields.io/badge/Github-Owen-Jacob)
