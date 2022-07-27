@@ -77,7 +77,7 @@ THEN I am signed out of the site
 
 ## Application Screenshot :
 
-![Cinema-Hub](/client/src/assets/img/2022-07-22.png)
+![Cinema-Hub](/client/src/assets//img/Screenshot-007.png)
 
 ## Repo link : 
 
