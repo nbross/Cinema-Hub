@@ -57,20 +57,3 @@ export const REMOVE_MOVIE = gql`
     }
   }
 `;
-
-export const WATCHED_MOVIE = gql`
-  mutation watchedMovie($movieId: ID!) {
-    watchedMovie(movieId: $movieId) {
-      _id
-      username
-      email
-      savedMovies {
-        overview
-        movieId
-        image
-        release
-        title
-      }
-    }
-  }
-`;

@@ -127,8 +127,8 @@ const SearchMovies = () => {
                       className='btn-block'
                       onClick={() => handleSaveMovie(movie.movieId)}>
                       {savedMovieIds?.some((savedMovieId) => savedMovieId === movie.movieId)
-                        ? 'This movie has already been saved!'
-                        : 'Save this Movie!'}
+                        ? 'This movie is already in your watchlist!'
+                        : 'Add Movie to Watchlist!'}
                     </Button>
                   )}
                 </Card.Body>

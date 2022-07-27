@@ -28,18 +28,3 @@ export const removeMovieId = (movieId) => {
 
   return true;
 };
-
-export const watchedMovieId = (movieId) => {
-  const savedMovieIds = localStorage.getItem('saved_movies')
-    ? JSON.parse(localStorage.getItem('saved_movies'))
-    : null;
-
-  if (!savedMovieIds) {
-    return false;
-  }
-
-  const updatedSavedMovieIds = savedMovieIds?.filter((savedMovieId) => savedMovieId !== movieId);
-  localStorage.setItem('saved_movies', JSON.stringify(updatedSavedMovieIds));
-
-  return true;
-};
