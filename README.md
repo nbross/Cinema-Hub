@@ -1,5 +1,5 @@
 # Cinema-Hub
-Are you tired of having to go through your webmaster every time you want to update or change your restaurant’s webpage? With our tool, you can log in to your Made-to-make webpage and create the perfect menu to showcase your chef’s dishes!
+Are you tired of not remembering a title to you favorite movie, or do you want a short and sweet description of a movie you have been wanting to see. Then boy do I have the website for you. It is called Cinema Hub a website where you can search thousands of movies to their read descriptions and save them to a watch list to watch them later on.
 ## User Story
 
 ```
@@ -75,12 +75,35 @@ THEN I am signed out of the site
 * React
 
 
-## Screenshot
+## Application Screenshot :
 
-![Cinema-Hub](/client/src/assets/img/2022-07-22.png)
+![Cinema-Hub](/client/src/assets//img/Screenshot-007.png)
 
-## Repo link
+## Repo link : 
 
-Git Hub Repo: https://github.com/nbross/Cinema-hub
+<b>Git Hub Repo:<b> https://github.com/nbross/Cinema-hub 
+  
+<b>Deployed App to Heroku :<b>
 
-Deployed Site: 
+## Future Development Plans :
+<b>Future enhancements to this app include:</b>
+
+
+## License
+[MIT License](./LICENSE)
+![license](https://img.shields.io/badge/License-MIT-blue)
+
+
+## Author :
+  <b>this project is made by :</b>
+ - Nick Bross
+ - Jacob Owen
+ - Mohamed Behnas 
+  
+<b>View the authors' portfolio at:  </b>
+- [Nick Bross ](https:/nickbros.github.io/react-portfolio/)
+  ![Badge](https://img.shields.io/badge/Github-Nick-Bross)
+- [Owen Jacob ](https:/jacobowen.github.io/react-portfolio/)
+  ![Badge](https://img.shields.io/badge/Github-Owen-Jacob)
+- [Mohamed Behnas ](https://tranquil-eyrie-31006.herokuapp.com/#/)
+  ![Badge](https://img.shields.io/badge/Github-Mohamed-Behnas)

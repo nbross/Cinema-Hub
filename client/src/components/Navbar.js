@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-
+import "../assets/styles.css";
 import Auth from '../utils/auth';
 
 const AppNavbar = () => {
@@ -12,14 +12,15 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+      <Navbar className='nav' variant='dark' expand='lg'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
-            Cinema Hub
+          <Navbar.Brand as={Link} to='/' className='The-Hub'>
+        Cinema Hub <span ></span>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
+
+          <Navbar.Toggle aria-controls='navbarSupportedContentr' />
           <Navbar.Collapse id='navbar'>
-            <Nav className='ml-auto'>
+            <Nav className='ml-auto dark'>
               <Nav.Link as={Link} to='/'>
                 Search For Movies
               </Nav.Link>

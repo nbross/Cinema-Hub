@@ -1,17 +1,107 @@
+
+.app-container {
+  margin-bottom: 1em; 
+  position: relative;
+  min-height: 100vh;
+} 
+
 body {
   font-family: 'Rubik', sans-serif;
+  background-color: #262626;
+} 
+
+.nav {
+  color: rgb(207, 207, 207);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Rubik Mono One', sans-serif;
+.homepage {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  
+
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+} 
+/* .navbar-dark  { */
+ /* color: #fff;  */
+ /* font-size: 10px;  */
+/* } */
+
+.home-text {
+  text-align: center;
 }
+
+.card {
+  border: none;
+}
+
+
+ .card-columns {
+  flex-direction: row;
+ 
+  
+} 
+
+.card-img-top {
+  max-height: 75vh;
+} 
 
 .small {
-  font-weight: 300;
+  font-weight: 500;
   font-style: italic;
+}  */
+
+
+.no-bullets {
+  list-style: none;
+} 
+
+.page-footer {
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  
+}
+
+
+.footer-link {
+  color: rgb(207, 207, 207);
+  font-size: 0.9rem;
+} 
+ .footer-link:hover {
+  color: #9C9EA1;
+} 
+ 
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+  padding-bottom: 22rem;
+  padding-top: 20px;
+  background-color: aqua;
+  ;
+} 
+
+@media (min-width: 576px) {
+  .card-columns {
+    column-count: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-columns {
+    column-count: 3;
+  }
+}
+.a {
+  flex: 0 100%;
 }

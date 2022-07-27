@@ -4,12 +4,15 @@ import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { QUERY_ME } from '../utils/queries';
 import { REMOVE_MOVIE } from '../utils/mutations';
+import { WATCHED_MOVIE } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeMovieId } from '../utils/localStorage';
+import { watchedMovieId } from '../utils/localStorage';
 
 const SavedMovies = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [removeMovie, { error }] = useMutation(REMOVE_MOVIE);
+  const [ watchedMovie]= useMutation(WATCHED_MOVIE);
 
   const userData = data?.me || {};
 
@@ -41,6 +44,28 @@ const SavedMovies = () => {
     return <h2>LOADING...</h2>;
   }
 
+  const handleWatchedMovie = async (movieId) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const { data } = await watchedMovie({
+        variables: { movieId },
+      });
+
+      watchedMovieId(movieId);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  if (loading) {
+    return <h2>LOADING...</h2>;
+  }
+
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark'>
@@ -54,23 +79,28 @@ const SavedMovies = () => {
             ? `Viewing ${userData.savedMovies.length} saved ${
                 userData.savedMovies.length === 1 ? 'movie' : 'movies'
               }:`
-            : 'You have no saved movies!'}
+            : 'You have no saved movies! 😔 ' }
         </h2>
         <CardColumns>
           {userData.savedMovies?.map((movie) => {
             return (
               <Card key={movie.movieId} border='dark'>
                 {movie.image ? (
-                  <Card.Img src={movie.image} alt={`The cover for ${movie.title}`} variant='top' />
+                  <Card.Img src={`https://image.tmdb.org/t/p/w200${movie.image}`} alt={`The cover for ${movie.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
                   <Card.Title>{movie.title}</Card.Title>
-                  <p className='small'>Authors: {movie.authors}</p>
-                  <Card.Text>{movie.description}</Card.Text>
+                  <p className='small'>Release Date: {movie.release}</p>
+                  <Card.Text>{movie.overview}</Card.Text>
                   <Button
                     className='btn-block btn-danger'
                     onClick={() => handleDeleteMovie(movie.movieId)}>
                     Delete this Movie!
+                  </Button>
+                  <Button
+                    className='btn-block btn'
+                    onClick={() => handleWatchedMovie(movie.movieId)}>
+                    You watched this movie!
                   </Button>
                 </Card.Body>
               </Card>
