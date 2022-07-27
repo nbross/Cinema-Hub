@@ -75,24 +75,35 @@ THEN I am signed out of the site
 * React
 
 
-## Screenshot
+## Application Screenshot :
 
-![Cinema-Hub](/client/src/assets/img/2022-07-22.png)
+![Cinema-Hub](/client/src/assets//img/Screenshot-007.png)
 
-## Repo link
+## Repo link : 
 
-Git Hub Repo: https://github.com/nbross/Cinema-hub
-Deployed Site: 
+<b>Git Hub Repo:<b> https://github.com/nbross/Cinema-hub 
+  
+<b>Deployed App to Heroku :<b>
 
 ## Future Development Plans :
 <b>Future enhancements to this app include:</b>
 
 
+## License
+[MIT License](./LICENSE)
+![license](https://img.shields.io/badge/License-MIT-blue)
 
 
-
-## Contribution:
-<b>this project is made by :</b>
-- Nick Bross
-- Jacob Owen
-- Mohamed Behnas 
+## Author :
+  <b>this project is made by :</b>
+ - Nick Bross
+ - Jacob Owen
+ - Mohamed Behnas 
+  
+<b>View the authors' portfolio at:  </b>
+- [Nick Bross ](https:/nickbros.github.io/react-portfolio/)
+  ![Badge](https://img.shields.io/badge/Github-Nick-Bross)
+- [Owen Jacob ](https:/jacobowen.github.io/react-portfolio/)
+  ![Badge](https://img.shields.io/badge/Github-Owen-Jacob)
+- [Mohamed Behnas ](https://tranquil-eyrie-31006.herokuapp.com/#/)
+  ![Badge](https://img.shields.io/badge/Github-Mohamed-Behnas)
