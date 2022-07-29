@@ -80,7 +80,7 @@ THEN I am signed out of the site
 
 <b>Git Hub Repo:<b> https://github.com/nbross/Cinema-hub 
   
-<b>Deployed App to Heroku :<b>
+<b>Deployed App to Heroku :<b> https://cinema-hub-app.herokuapp.com/
 
 ## Future Development Plans :
 <b>Future enhancements to this app include:</b>
