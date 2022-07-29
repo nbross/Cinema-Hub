@@ -111,7 +111,7 @@ const SearchMovies = () => {
         <h2 className='length'>
           {searchedMovies.length
             ? `Viewing ${searchedMovies.length} results:`
-            : 'Search for a book to begin'}
+            : 'Search for a movie to begin'}
         </h2>
         <CardColumns>
           {searchedMovies.map((movie) => {
