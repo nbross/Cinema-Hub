@@ -108,7 +108,11 @@ const SearchMovies = () => {
       </Jumbotron>
 
       <Container className='Container'>
-  
+        <h2 className='length'>
+          {searchedMovies.length
+            ? `Viewing ${searchedMovies.length} results:`
+            : 'Search for a book to begin'}
+        </h2>
         <CardColumns>
           {searchedMovies.map((movie) => {
             return (

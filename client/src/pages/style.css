@@ -15,3 +15,15 @@
 .card {
     background-color: black;
 }
+
+.length {
+    font-family: 'Erica One';
+    animation: color-change 2s linear infinite;
+    font-size: 45px;
+}
+
+@keyframes color-change {
+    0% { color: #4d4177; }
+    50% { color: #44107a; }
+    100% { color: #ff1361; }
+}
