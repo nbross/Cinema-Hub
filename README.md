@@ -1,10 +1,10 @@
 # Cinema-Hub
-Are you tired of not remembering a title to you favorite movie, or do you want a short and sweet description of a movie you have been wanting to see. Then boy do I have the website for you. It is called Cinema Hub a website where you can search thousands of movies to their read descriptions and save them to a watch list to watch them later on.
+Are you tired of not remembering the title to your favorite movie, or do you want a short and sweet description of a movie you’ve been wanting to see. Then boy! Do I have the website for you. It is called Cinema Hub, a website where you can search thousands of movies, read descriptions, and save them to a watchlist to watch them later.
 ## User Story
 
 ```
-AS A person loves who movies 
-I WANT a website that let me search movies and create a watch-list
+AS A person who loves movies 
+I WANT a website that lets me search movies and create a watch-list
 SO THAT I can search any title, read descriptions on movies, and build a watch-list tailored to me
 ```
 
